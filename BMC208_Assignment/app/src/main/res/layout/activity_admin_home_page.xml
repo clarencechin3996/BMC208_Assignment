@@ -6,4 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".admin_home_page">
 
+    <TextView
+        android:id="@+id/text_view_username"
+        android:layout_width="393dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="20dp"
+        android:text="Welcome"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button_record_vaccine_batch"
+        android:layout_width="249dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="224dp"
+        android:backgroundTint="@color/cus"
+        android:fontFamily="sans-serif-black"
+        android:text="Record Vaccine Batch"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button_view_vaccine_batch_info"
+        android:layout_width="249dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="376dp"
+        android:backgroundTint="@color/cus"
+        android:fontFamily="sans-serif-black"
+        android:text="View Vaccine Batch Info"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
