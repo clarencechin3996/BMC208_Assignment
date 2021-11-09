@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_admin_home_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_vaccine_batch_list.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_view_vaccine_batch_info.xml" value="0.22735507246376813" />
       </map>
     </option>

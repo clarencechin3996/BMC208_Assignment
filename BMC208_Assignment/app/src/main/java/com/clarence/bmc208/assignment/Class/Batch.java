@@ -1,8 +1,9 @@
 package com.clarence.bmc208.assignment.Class;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Batch {
+public class Batch implements Serializable {
 
     private String batchNo;
     private Date expiry_date;
@@ -66,5 +67,11 @@ public class Batch {
 
     public void setBatch_healthcare_centre_name(String batch_healthcare_centre_name) {
         this.batch_healthcare_centre_name = batch_healthcare_centre_name;
+    }
+
+    @Override
+    public String toString() {
+        return "Number of Pending Appointment: " + numberOfPendingAppointment +
+                "\nVaccineID: " + batch_vaccineID ;
     }
 }
