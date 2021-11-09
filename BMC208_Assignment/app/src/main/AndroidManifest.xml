@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment">
         <activity
-            android:name=".admin_home_page"
-            android:exported="false" />
-        <activity
             android:name=".viewVaccineBatchInfo"
+            android:exported="true" />
+        <activity
+            android:name=".vaccineBatchList"
+            android:exported="true" />
+        <activity
+            android:name=".admin_home_page"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

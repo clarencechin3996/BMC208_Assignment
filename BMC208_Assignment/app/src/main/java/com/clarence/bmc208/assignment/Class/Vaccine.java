@@ -1,6 +1,8 @@
 package com.clarence.bmc208.assignment.Class;
 
-public class Vaccine {
+import java.io.Serializable;
+
+public class Vaccine implements Serializable {
 
     private String vaccineID;
     private String manufacturer;

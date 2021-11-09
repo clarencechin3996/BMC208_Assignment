@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "16642610764",
+    "project_id": "bmc208-assignment-587f0",
+    "storage_bucket": "bmc208-assignment-587f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16642610764:android:a88481c59b7af9845f46e9",
+        "android_client_info": {
+          "package_name": "com.clarence.bmc208.assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16642610764-6i99j6t175dfvosfhn1ucr57sgqcheuf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVE74xlxWhkhSaC9Ms7uOQ8ZRuMjUS5dM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16642610764-6i99j6t175dfvosfhn1ucr57sgqcheuf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
