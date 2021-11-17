@@ -5,13 +5,25 @@ import java.util.Date;
 
 public class Batch implements Serializable {
 
+    private String batchID;
     private String batchNo;
-    private Date expiry_date;
+    private String expiry_date;
     private int numberOfPendingAppointment;
     private int number_available;
     private int number_administered;
     private String batch_vaccineID;
     private String batch_healthcare_centre_name;
+
+    public Batch() {
+    }
+
+    public String getBatchID() {
+        return batchID;
+    }
+
+    public void setBatchID(String batchID) {
+        this.batchID = batchID;
+    }
 
     public String getBatchNo() {
         return batchNo;
@@ -21,11 +33,11 @@ public class Batch implements Serializable {
         this.batchNo = batchNo;
     }
 
-    public Date getExpiry_date() {
+    public String getExpiry_date() {
         return expiry_date;
     }
 
-    public void setExpiry_date(Date expiry_date) {
+    public void setExpiry_date(String expiry_date) {
         this.expiry_date = expiry_date;
     }
 
@@ -69,9 +81,5 @@ public class Batch implements Serializable {
         this.batch_healthcare_centre_name = batch_healthcare_centre_name;
     }
 
-    @Override
-    public String toString() {
-        return "Number of Pending Appointment: " + numberOfPendingAppointment +
-                "\nVaccineID: " + batch_vaccineID ;
-    }
+
 }

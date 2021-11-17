@@ -8,6 +8,9 @@ public class Vaccine implements Serializable {
     private String manufacturer;
     private String vaccine_name;
 
+    public Vaccine() {
+    }
+
     public String getVaccineID() {
         return vaccineID;
     }
@@ -31,4 +34,6 @@ public class Vaccine implements Serializable {
     public void setVaccine_name(String vaccine_name) {
         this.vaccine_name = vaccine_name;
     }
+
+
 }

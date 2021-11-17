@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".manageVaccinationAppointment">
+
+    <TextView
+        android:id="@+id/text_view_fullname"
+        android:layout_width="393dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="20dp"
+        android:text="Full Name: "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/text_view_ic_passport"
+        android:layout_width="393dp"
+        android:layout_height="55dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="20dp"
+        android:text="IC/Passport: "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_fullname"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/text_view_Batch_No"
+        android:layout_width="393dp"
+        android:layout_height="55dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="20dp"
+        android:text="Batch No: "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_ic_passport"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:id="@+id/text_view_Expiry_Date"
+        android:layout_width="393dp"
+        android:layout_height="55dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="20dp"
+        android:text="Expiry Date: "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_Batch_No"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/text_view_Manufacturer"
+        android:layout_width="393dp"
+        android:layout_height="55dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="20dp"
+        android:text="Manufacturer: "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_Expiry_Date"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:id="@+id/text_view_Vaccine_Name"
+        android:layout_width="393dp"
+        android:layout_height="55dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="20dp"
+        android:text="Vaccine Name: "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_Manufacturer"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button_record_confirm"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="400dp"
+        android:backgroundTint="@color/cus"
+        android:fontFamily="sans-serif-black"
+        android:text="Confirm"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button_view_reject"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/cus"
+        android:fontFamily="sans-serif-black"
+        android:text="Reject"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_record_confirm"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button_view_record"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/cus"
+        android:fontFamily="sans-serif-black"
+        android:text="Record"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_view_reject"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
