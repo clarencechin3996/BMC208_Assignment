@@ -12,19 +12,19 @@
         <activity
             android:name=".manageVaccinationAppointment"
             android:exported="false"
-            android:label="Vaccination Appointment"/>
+            android:label="PCVS"/>
         <activity
             android:name=".viewVaccineBatchInfo"
             android:exported="true"
-            android:label="Vaccine Batch Information" />
+            android:label="PCVS" />
         <activity
             android:name=".vaccineBatchList"
             android:exported="true"
-            android:label="Vaccine Batch Information" />
+            android:label="PCVS" />
         <activity
             android:name=".admin_home_page"
             android:exported="true"
-            android:label="Admin Homepage">
+            android:label="PCVS">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@color/CardView_custom"
     android:layout_margin="12dp"
     app:cardCornerRadius="6dp">
 
@@ -11,11 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <TextView
             android:id="@+id/text_view_batch_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:fontFamily="sans-serif-medium"
             android:textColor="#222222"
             android:textSize="15sp"
@@ -28,8 +31,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_view_batch_no"
-            android:layout_marginTop="4dp"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="sans-serif-medium"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:textColor="#222222"
             android:textSize="15sp"
             tools:text="Vaccine Name: ">
@@ -40,10 +45,13 @@
             android:id="@+id/text_view_no_pending_appointment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_below="@id/text_view_vaccine_name"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="sans-serif-medium"
             android:textColor="#222222"
-            android:textSize="14sp"
+            android:textSize="15sp"
             tools:text="No of Pending Appointment: ">
 
         </TextView>
