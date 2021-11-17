@@ -6,19 +6,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".viewVaccineBatchInfo"
+    android:background="@color/custom"
     android:id="@+id/constraint_layout_vaccine_batch">
 
+    <TextView
+        android:id="@+id/text_view_hc"
+        android:layout_width="377dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Healthcare Center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/text_view_healthcare_centre"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:text="Healthcare Center: "
+        android:layout_width="377dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Healthcare Center "
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_view_hc">
 
     </TextView>
 

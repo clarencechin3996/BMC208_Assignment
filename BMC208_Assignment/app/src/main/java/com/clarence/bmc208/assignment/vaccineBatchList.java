@@ -39,7 +39,7 @@ public class vaccineBatchList extends AppCompatActivity {
         healthcareName = findViewById(R.id.text_view_healthcare_centre);
         recyclerView = findViewById(R.id.recycler_view_vaccine_batch_list);
 
-        healthcareName.setText("Healthcare Center: HMC Hospital");
+        healthcareName.setText("HMC Hospital");
         displayVaccineBatch();
 
     }
