@@ -1,15 +1,16 @@
 package com.clarence.bmc208.assignment.Class;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Vaccination {
+public class Vaccination implements Serializable {
 
     private String vaccinationID;
-    private Date appointmentDate;
+    private String appointmentDate;
     private String status;
     private String remark;
     private String vaccination_patientID;
-    private String vaccination_batchNo;
+    private String vaccination_batchID;
 
     public String getVaccinationID() {
         return vaccinationID;
@@ -19,11 +20,11 @@ public class Vaccination {
         this.vaccinationID = vaccinationID;
     }
 
-    public Date getAppointmentDate() {
+    public String getAppointmentDate() {
         return appointmentDate;
     }
 
-    public void setAppointmentDate(Date appointmentDate) {
+    public void setAppointmentDate(String appointmentDate) {
         this.appointmentDate = appointmentDate;
     }
 
@@ -51,11 +52,11 @@ public class Vaccination {
         this.vaccination_patientID = vaccination_patientID;
     }
 
-    public String getVaccination_batchNo() {
-        return vaccination_batchNo;
+    public String getVaccination_batchID() {
+        return vaccination_batchID;
     }
 
-    public void setVaccination_batchNo(String vaccination_batchNo) {
-        this.vaccination_batchNo = vaccination_batchNo;
+    public void setVaccination_batchID(String vaccination_batchID) {
+        this.vaccination_batchID = vaccination_batchID;
     }
 }

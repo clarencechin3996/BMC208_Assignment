@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/text_view_batch_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#222222"
+            android:textSize="15sp"
+            tools:text="Batch No:">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/text_view_vaccine_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_batch_no"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#222222"
+            android:textSize="15sp"
+            tools:text="Vaccine Name: ">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/text_view_no_pending_appointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_vaccine_name"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            tools:text="No of Pending Appointment: ">
+
+        </TextView>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
