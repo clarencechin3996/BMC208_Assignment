@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Assignment">
         <activity
             android:name=".manageVaccinationAppointment"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Vaccination Appointment"/>
         <activity
             android:name=".viewVaccineBatchInfo"
             android:exported="true"
