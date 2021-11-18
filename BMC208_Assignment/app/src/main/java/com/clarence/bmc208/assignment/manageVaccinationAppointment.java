@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -146,25 +147,48 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             String remark = input.getText().toString();
-                                            DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
-                                            updateVaccinationDB.update(
-                                                    "status", "REJECT",
-                                                    "remark", remark
-                                            ).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
-                                                    DocumentReference updateBatchPendingDocRef = db.collection("Batch").document(selectedBatch.getBatchID());
-                                                    updateBatchPendingDocRef.update(
-                                                            "numberOfPendingAppointment",selectedBatch.getNumberOfPendingAppointment()-1
-                                                    ).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                        @Override
-                                                        public void onComplete(@NonNull Task<Void> task) {
-                                                            Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment reject!",Snackbar.LENGTH_SHORT);
-                                                            snackbar.show();
-                                                        }
-                                                    });
-                                                }
-                                            });
+                                            if(remark.isEmpty()){
+                                                DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
+                                                updateVaccinationDB.update(
+                                                        "status", "REJECT",
+                                                        "remark", ""
+                                                ).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        DocumentReference updateBatchPendingDocRef = db.collection("Batch").document(selectedBatch.getBatchID());
+                                                        updateBatchPendingDocRef.update(
+                                                                "numberOfPendingAppointment",selectedBatch.getNumberOfPendingAppointment()-1
+                                                        ).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment reject!",Snackbar.LENGTH_SHORT);
+                                                                snackbar.show();
+                                                            }
+                                                        });
+                                                    }
+                                                });
+                                            }else{
+                                                DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
+                                                updateVaccinationDB.update(
+                                                        "status", "REJECT",
+                                                        "remark", remark
+                                                ).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        DocumentReference updateBatchPendingDocRef = db.collection("Batch").document(selectedBatch.getBatchID());
+                                                        updateBatchPendingDocRef.update(
+                                                                "numberOfPendingAppointment",selectedBatch.getNumberOfPendingAppointment()-1
+                                                        ).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment reject!",Snackbar.LENGTH_SHORT);
+                                                                snackbar.show();
+                                                            }
+                                                        });
+                                                    }
+                                                });
+                                            }
+
                                         }
                                     });
 
@@ -214,6 +238,7 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             String remark = input.getText().toString();
+
                                             DocumentReference recordDocRef = db.collection("Batch").document(selectedBatch.getBatchID());
                                             recordDocRef.update(
                                                     "number_available", selectedBatch.getNumber_available()-1,
@@ -222,17 +247,31 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if(task.isSuccessful()){
-                                                        DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
-                                                        updateVaccinationDB.update(
-                                                                "status", "ADMINISTERED",
-                                                                "remark", remark
-                                                        ).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                            @Override
-                                                            public void onComplete(@NonNull Task<Void> task) {
-                                                                Snackbar snackbar = Snackbar.make(constraintLayout, "Vaccination Appointment administered!", Snackbar.LENGTH_SHORT);
-                                                                snackbar.show();
-                                                            }
-                                                        });
+                                                        if(remark.isEmpty()){
+                                                            DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
+                                                            updateVaccinationDB.update(
+                                                                    "status", "ADMINISTERED",
+                                                                    "remark", ""
+                                                            ).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<Void> task) {
+                                                                    Snackbar snackbar = Snackbar.make(constraintLayout, "Vaccination Appointment administered!", Snackbar.LENGTH_SHORT);
+                                                                    snackbar.show();
+                                                                }
+                                                            });
+                                                        }else {
+                                                            DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
+                                                            updateVaccinationDB.update(
+                                                                    "status", "ADMINISTERED",
+                                                                    "remark", remark
+                                                            ).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<Void> task) {
+                                                                    Snackbar snackbar = Snackbar.make(constraintLayout, "Vaccination Appointment administered!", Snackbar.LENGTH_SHORT);
+                                                                    snackbar.show();
+                                                                }
+                                                            });
+                                                        }
                                                     }
                                                 }
                                             });

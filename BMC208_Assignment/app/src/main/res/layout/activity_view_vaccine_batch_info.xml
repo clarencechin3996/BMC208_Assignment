@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/custom"
-    tools:context=".viewVaccineBatchInfo">
+    tools:context=".viewVaccineBatchInfo"
+    android:id="@+id/constraint_layout_vaccine_batch_info">
 
     <TextView
         android:id="@+id/text_view_BatchInfo"
@@ -94,5 +95,8 @@
         tools:listitem="@layout/vaccination_list">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
