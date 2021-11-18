@@ -3,6 +3,7 @@ package com.clarence.bmc208.assignment;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,12 +26,14 @@ public class viewVaccineBatchInfo extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Vaccination>  vaccinationList;
     Batch selectedBatch;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_vaccine_batch_info);
         recyclerView = findViewById(R.id.recycler_view_Vaccination_List);
+
 
         selectedBatch = (Batch) getIntent().getSerializableExtra("batch");
         TextView expiryDate = findViewById(R.id.text_view_expiry_date);
