@@ -306,8 +306,8 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        manufacturer.setText("Manufacturer: " + document.get("manufacturer"));
-                        vaccineName.setText("Vaccine Name: "+ document.get("vaccine_name"));
+                        manufacturer.setText("Manufacturer :  " + document.get("manufacturer"));
+                        vaccineName.setText("Vaccine Name :  "+ document.get("vaccine_name"));
                     }
                 }
             }
@@ -323,8 +323,8 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        batchNo.setText("Batch No: "+ document.get("batchNo"));
-                        expiryDate.setText("Expiry Date: "+document.get("expiry_date"));
+                        batchNo.setText("Batch No :  "+ document.get("batchNo"));
+                        expiryDate.setText("Expiry Date :  "+document.get("expiry_date"));
 
 
                     }
@@ -342,8 +342,8 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        fullName.setText("FullName: " + document.get("fullName"));
-                        ic_passport.setText("IC/Passport: "+ document.get("ic_passport"));
+                        fullName.setText("Patient full name :  " + document.get("fullName"));
+                        ic_passport.setText("IC/Passport :  "+ document.get("ic_passport"));
                     }
                 }
             }

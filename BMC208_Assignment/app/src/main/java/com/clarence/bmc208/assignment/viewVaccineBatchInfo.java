@@ -41,10 +41,10 @@ public class viewVaccineBatchInfo extends AppCompatActivity {
         TextView numAdministered = findViewById(R.id.text_view_number_administered);
         TextView numPendingAppointment = findViewById(R.id.text_view_pending_appointment);
 
-        expiryDate.setText("Expiry Date: "+selectedBatch.getExpiry_date());
-        numAvailable.setText("Number Available: "+selectedBatch.getNumber_available());
-        numAdministered.setText("Number Administered: "+selectedBatch.getNumber_administered());
-        numPendingAppointment.setText("No of Pending Appointment: "+selectedBatch.getNumberOfPendingAppointment());
+        expiryDate.setText("Expiry Date :   "+selectedBatch.getExpiry_date());
+        numAvailable.setText("Number Available :  "+selectedBatch.getNumber_available());
+        numAdministered.setText("Number Administered :  "+selectedBatch.getNumber_administered());
+        numPendingAppointment.setText("No of Pending Appointment :  "+selectedBatch.getNumberOfPendingAppointment());
 
         displayVaccination();
 
