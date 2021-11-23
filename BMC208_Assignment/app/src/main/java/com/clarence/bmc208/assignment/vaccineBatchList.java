@@ -35,6 +35,7 @@ public class vaccineBatchList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccine_batch_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         healthcareName = findViewById(R.id.text_view_healthcare_centre);
         recyclerView = findViewById(R.id.recycler_view_vaccine_batch_list);

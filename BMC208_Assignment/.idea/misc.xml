@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/activity_admin_home_page.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_manage_vaccination_appointment.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_vaccine_batch_list.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_view_vaccine_batch_info.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.335" />
         <entry key="app/src/main/res/layout/vaccination_list.xml" value="0.335" />
         <entry key="app/src/main/res/layout/vaccine_batch.xml" value="0.335" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18385416666666668" />
       </map>
     </option>
   </component>

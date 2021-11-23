@@ -32,6 +32,7 @@ public class viewVaccineBatchInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_vaccine_batch_info);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recyclerView = findViewById(R.id.recycler_view_Vaccination_List);
 
 
@@ -47,7 +48,6 @@ public class viewVaccineBatchInfo extends AppCompatActivity {
         numPendingAppointment.setText("No of Pending Appointment :  "+selectedBatch.getNumberOfPendingAppointment());
 
         displayVaccination();
-
     }
 
     private void displayVaccination(){

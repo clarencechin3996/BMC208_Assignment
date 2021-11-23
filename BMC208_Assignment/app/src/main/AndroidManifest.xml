@@ -11,16 +11,19 @@
         android:theme="@style/Theme.Assignment">
         <activity
             android:name=".manageVaccinationAppointment"
-            android:exported="false"
-            android:label="PCVS"/>
+            android:exported="true"
+            android:label="PCVS"
+            android:parentActivityName=".vaccineBatchList"/>
         <activity
             android:name=".viewVaccineBatchInfo"
             android:exported="true"
-            android:label="PCVS" />
+            android:label="PCVS"
+            android:parentActivityName=".vaccineBatchList"/>
         <activity
             android:name=".vaccineBatchList"
             android:exported="true"
-            android:label="PCVS" />
+            android:label="PCVS"
+            android:parentActivityName=".admin_home_page"/>
         <activity
             android:name=".admin_home_page"
             android:exported="true"
