@@ -30,7 +30,6 @@ public class admin_home_page extends AppCompatActivity {
     Button viewVaccineBatchInfoBtn;
     Button addVaccineBtn;
     ArrayList<String> vaccineList;
-
     ConstraintLayout constraintLayout;
     Vaccine vaccine;
 

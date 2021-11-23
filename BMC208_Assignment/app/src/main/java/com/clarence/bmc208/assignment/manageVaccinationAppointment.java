@@ -26,6 +26,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Document;
 
+import java.util.Objects;
+
 public class manageVaccinationAppointment extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     Vaccination selectedVaccination;
@@ -46,6 +48,7 @@ public class manageVaccinationAppointment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_vaccination_appointment);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         constraintLayout = findViewById(R.id.constraint_layout_vaccination);
         selectedVaccination = (Vaccination) getIntent().getSerializableExtra("vaccination");
@@ -77,14 +80,14 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                if(document.get("status").equals("CONFIRMED")){
+                            if (Objects.requireNonNull(document).exists()) {
+                                if(Objects.equals(document.get("status"), "CONFIRMED")){
                                     Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment had been confirmed",Snackbar.LENGTH_SHORT);
                                     snackbar.show();
-                                }else if(document.get("status").equals("ADMINISTERED")){
+                                }else if(Objects.equals(document.get("status"), "ADMINISTERED")){
                                     Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment had been administered",Snackbar.LENGTH_SHORT);
                                     snackbar.show();
-                                } else if(document.get("status").equals("REJECT")){
+                                } else if(Objects.equals(document.get("status"), "REJECT")){
                                     Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment had been reject",Snackbar.LENGTH_SHORT);
                                     snackbar.show();
                                 } else{
@@ -125,14 +128,14 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                if(document.get("status").equals("CONFIRMED")){
+                            if (Objects.requireNonNull(document).exists()) {
+                                if(Objects.equals(document.get("status"), "CONFIRMED")){
                                     Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment had been confirmed",Snackbar.LENGTH_SHORT);
                                     snackbar.show();
-                                }else if(document.get("status").equals("ADMINISTERED")){
+                                }else if(Objects.equals(document.get("status"), "ADMINISTERED")){
                                     Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment had been administered",Snackbar.LENGTH_SHORT);
                                     snackbar.show();
-                                } else if(document.get("status").equals("REJECT")){
+                                } else if(Objects.equals(document.get("status"), "REJECT")){
                                     Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment had been reject",Snackbar.LENGTH_SHORT);
                                     snackbar.show();
                                 } else{
@@ -147,8 +150,8 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             String remark = input.getText().toString();
+                                            DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
                                             if(remark.isEmpty()){
-                                                DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
                                                 updateVaccinationDB.update(
                                                         "status", "REJECT",
                                                         "remark", ""
@@ -168,7 +171,6 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                                                     }
                                                 });
                                             }else{
-                                                DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
                                                 updateVaccinationDB.update(
                                                         "status", "REJECT",
                                                         "remark", remark
@@ -216,14 +218,14 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                if(document.get("status").equals("PENDING")){
+                            if (Objects.requireNonNull(document).exists()) {
+                                if(Objects.equals(document.get("status"), "PENDING")){
                                     Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment need to be confirm",Snackbar.LENGTH_SHORT);
                                     snackbar.show();
-                                }else if(document.get("status").equals("ADMINISTERED")){
+                                }else if(Objects.equals(document.get("status"), "ADMINISTERED")){
                                     Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment had been administered",Snackbar.LENGTH_SHORT);
                                     snackbar.show();
-                                } else if(document.get("status").equals("REJECT")){
+                                } else if(Objects.equals(document.get("status"), "REJECT")){
                                     Snackbar snackbar = Snackbar.make(constraintLayout,"Vaccination Appointment had been reject",Snackbar.LENGTH_SHORT);
                                     snackbar.show();
                                 } else{
@@ -247,8 +249,8 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if(task.isSuccessful()){
+                                                        DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
                                                         if(remark.isEmpty()){
-                                                            DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
                                                             updateVaccinationDB.update(
                                                                     "status", "ADMINISTERED",
                                                                     "remark", ""
@@ -260,7 +262,6 @@ public class manageVaccinationAppointment extends AppCompatActivity {
                                                                 }
                                                             });
                                                         }else {
-                                                            DocumentReference updateVaccinationDB = db.collection("Vaccination").document(selectedVaccination.getVaccinationID());
                                                             updateVaccinationDB.update(
                                                                     "status", "ADMINISTERED",
                                                                     "remark", remark
@@ -305,7 +306,7 @@ public class manageVaccinationAppointment extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
+                    if (Objects.requireNonNull(document).exists()) {
                         manufacturer.setText("Manufacturer :  " + document.get("manufacturer"));
                         vaccineName.setText("Vaccine Name :  "+ document.get("vaccine_name"));
                     }
@@ -322,7 +323,7 @@ public class manageVaccinationAppointment extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
+                    if (Objects.requireNonNull(document).exists()) {
                         batchNo.setText("Batch No :  "+ document.get("batchNo"));
                         expiryDate.setText("Expiry Date :  "+document.get("expiry_date"));
 
@@ -341,7 +342,7 @@ public class manageVaccinationAppointment extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
+                    if (Objects.requireNonNull(document).exists()) {
                         fullName.setText("Patient full name :  " + document.get("fullName"));
                         ic_passport.setText("IC/Passport :  "+ document.get("ic_passport"));
                     }
